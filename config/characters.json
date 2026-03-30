@@ -1,0 +1,84 @@
+{
+  "characters": [
+    {
+      "id": "bird_01",
+      "displayName": "Kiwi Keeper",
+      "spriteKey": "char_bird_01",
+      "fruitId": "kiwi",
+      "passiveStackRequired": 5,
+      "passiveDescription": "Destroys all fruits in a 3×3 area at the center of the board. Does not destroy Golden Apples.",
+      "passiveHandlerRef": "passive_01",
+      "passiveIconSpriteKey": "char_bird_01"
+    },
+    {
+      "id": "bird_02",
+      "displayName": "Berry Storm",
+      "spriteKey": "char_bird_02",
+      "fruitId": "blueberry",
+      "passiveStackRequired": 7,
+      "passiveDescription": "Spawns a random Horizontal or Vertical Bomb modifier on 2 random fruits that do not already have a modifier.",
+      "passiveHandlerRef": "passive_02",
+      "passiveIconSpriteKey": "char_bird_02"
+    },
+    {
+      "id": "bird_03",
+      "displayName": "Peach Blossom",
+      "spriteKey": "char_bird_03",
+      "fruitId": "peach",
+      "passiveStackRequired": 5,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_03"
+    },
+    {
+      "id": "bird_04",
+      "displayName": "Banana Peel",
+      "spriteKey": "char_bird_04",
+      "fruitId": "banana",
+      "passiveStackRequired": 6,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_04"
+    },
+    {
+      "id": "bird_05",
+      "displayName": "Strawberry Wings",
+      "spriteKey": "char_bird_05",
+      "fruitId": "strawberry",
+      "passiveStackRequired": 4,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_05"
+    },
+    {
+      "id": "bird_06",
+      "displayName": "Green Dart",
+      "spriteKey": "char_bird_06",
+      "fruitId": "kiwi",
+      "passiveStackRequired": 6,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_06"
+    },
+    {
+      "id": "bird_07",
+      "displayName": "Night Owl",
+      "spriteKey": "char_bird_07",
+      "fruitId": "blueberry",
+      "passiveStackRequired": 5,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_07"
+    },
+    {
+      "id": "bird_08",
+      "displayName": "Fuzzy Wren",
+      "spriteKey": "char_bird_08",
+      "fruitId": "peach",
+      "passiveStackRequired": 7,
+      "passiveDescription": "TBD — not yet designed.",
+      "passiveHandlerRef": "passive_stub",
+      "passiveIconSpriteKey": "char_bird_08"
+    }
+  ]
+}

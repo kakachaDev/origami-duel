@@ -1,0 +1,11 @@
+{
+  "_comment": "Download the real config from https://github.com/playgama/bridge/releases and replace this file. Fill in your actual platform app IDs and leaderboard IDs.",
+  "gameId": "YOUR_GAME_ID",
+  "leaderboards": [
+    {
+      "id": "main",
+      "name": "Main Leaderboard"
+    }
+  ],
+  "payments": []
+}

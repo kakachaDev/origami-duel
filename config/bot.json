@@ -1,0 +1,43 @@
+{
+  "difficulties": {
+    "easy": {
+      "label": "Easy",
+      "randomness": 0.8,
+      "passiveSeeking": 0.1,
+      "abilityUsage": 0.1,
+      "abilityTiming": 0.2,
+      "fruitPreferenceWeight": 1.0,
+      "scoreMaximizing": 0.1,
+      "modifierAwareness": 0.1
+    },
+    "medium": {
+      "label": "Medium",
+      "randomness": 0.4,
+      "passiveSeeking": 0.5,
+      "abilityUsage": 0.4,
+      "abilityTiming": 0.5,
+      "fruitPreferenceWeight": 1.5,
+      "scoreMaximizing": 0.5,
+      "modifierAwareness": 0.5
+    },
+    "hard": {
+      "label": "Hard",
+      "randomness": 0.05,
+      "passiveSeeking": 0.85,
+      "abilityUsage": 0.8,
+      "abilityTiming": 0.9,
+      "fruitPreferenceWeight": 2.5,
+      "scoreMaximizing": 0.9,
+      "modifierAwareness": 0.9
+    }
+  },
+  "fieldDescriptions": {
+    "randomness": "0 = always optimal move, 1 = fully random. Injected as noise into move scoring.",
+    "passiveSeeking": "0 = ignores passive fruit, 1 = prioritises passive fruit collection above all else.",
+    "abilityUsage": "Probability [0-1] of using an available ability on any given action.",
+    "abilityTiming": "0 = uses ability at first opportunity, 1 = waits for highest-value moment.",
+    "fruitPreferenceWeight": "Score multiplier bonus for matches of the passive fruit type.",
+    "scoreMaximizing": "0 = picks first valid move, 1 = always picks move with highest fruit count destroyed.",
+    "modifierAwareness": "Probability [0-1] of intentionally triggering bomb / golden-apple combos."
+  }
+}

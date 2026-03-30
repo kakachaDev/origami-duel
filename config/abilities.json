@@ -1,0 +1,108 @@
+{
+  "abilities": [
+    {
+      "id": "ability_01",
+      "displayName": "Precise Strike",
+      "spriteKey": "ability_icon_01",
+      "description": "Tap a fruit on the board to instantly destroy it. Cannot target Golden Apples or Ice.",
+      "handlerRef": "ability_01",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 3 },
+        "L4": { "uses": 4 },
+        "L5": { "uses": 5 }
+      }
+    },
+    {
+      "id": "ability_02",
+      "displayName": "Golden Rain",
+      "spriteKey": "ability_icon_02",
+      "description": "Replaces a number of random fruits on the board with Golden Apples. Does not replace Ice or existing Golden Apples.",
+      "handlerRef": "ability_02",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 2, "count": 2 },
+        "L4": { "uses": 2, "count": 3 },
+        "L5": { "uses": 3, "count": 3 }
+      }
+    },
+    {
+      "id": "ability_03",
+      "displayName": "Thunderclap",
+      "spriteKey": "ability_icon_03",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    },
+    {
+      "id": "ability_04",
+      "displayName": "Frost Wave",
+      "spriteKey": "ability_icon_04",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    },
+    {
+      "id": "ability_05",
+      "displayName": "Double Edge",
+      "spriteKey": "ability_icon_05",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    },
+    {
+      "id": "ability_06",
+      "displayName": "Catalyst",
+      "spriteKey": "ability_icon_06",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    },
+    {
+      "id": "ability_07",
+      "displayName": "Mirage",
+      "spriteKey": "ability_icon_07",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    },
+    {
+      "id": "ability_08",
+      "displayName": "Avalanche",
+      "spriteKey": "ability_icon_08",
+      "description": "TBD — not yet designed.",
+      "handlerRef": "ability_stub",
+      "costsAction": false,
+      "levels": {
+        "L3": { "uses": 1 },
+        "L4": { "uses": 2 },
+        "L5": { "uses": 3 }
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "grid": {
+    "cols": 7,
+    "rows": 7,
+    "cellSize": 64
+  },
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "gameFieldWidth": 448,
+    "gameFieldHeight": 448
+  },
+  "rules": {
+    "roundCount": 4,
+    "actionsPerTurn": 2,
+    "bonusActionMinFruits": 3,
+    "minMatchLength": 3,
+    "bombTriggerLength": 4,
+    "goldenAppleTriggerLength": 5
+  },
+  "scoring": {
+    "baseFruitPoints": 10,
+    "bombClearBonusPerFruit": 2,
+    "goldenAppleBonus": 5,
+    "comboMultiplierPer3Extra": 1.2
+  },
+  "ropeBar": {
+    "min": -100,
+    "max": 100,
+    "pointsPerUnit": 10
+  },
+  "modifierSpawnChances": {
+    "_comment": "bomb_h/v and golden_apple are only created by player actions (4-in-row, 5-in-row). Only ice can spawn procedurally.",
+    "bomb_h": 0.0,
+    "bomb_v": 0.0,
+    "golden_apple": 0.0,
+    "ice": 0.05
+  },
+  "hints": {
+    "delayMs": 2000,
+    "animDurationMs": 800,
+    "animScaleMin": 0.93,
+    "animScaleMax": 1.08,
+    "animRotateDeg": 8
+  },
+  "bot": {
+    "defaultDifficulty": "medium",
+    "actionDelayMs": 900,
+    "fingerSlideInMs": 400,
+    "fingerMoveMs": 350
+  }
+}
