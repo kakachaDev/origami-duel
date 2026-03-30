@@ -14,6 +14,8 @@ export interface AbilityDef {
   handlerRef: string
   /** false = using this ability does NOT consume a player action */
   costsAction: boolean
+  /** true = activating sets AbilityInstance.isActive and waits for a board tap before firing */
+  requiresTarget: boolean
   levels: Record<AbilityLevel, AbilityLevelConfig>
 }
 
