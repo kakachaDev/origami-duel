@@ -41,34 +41,32 @@
       "color": "#5856D6"
     }
   ],
-  "modifiers": [
-    {
-      "id": "golden_apple",
-      "displayName": "Golden Apple",
-      "spriteKey": "modifier_golden_apple",
-      "replacesFruit": true,
-      "handlerRef": "goldenAppleHandler"
-    },
-    {
-      "id": "ice",
-      "displayName": "Ice",
-      "spriteKey": "modifier_ice",
-      "replacesFruit": true,
-      "handlerRef": "iceHandler"
-    },
+  "overlays": [
     {
       "id": "bomb_h",
       "displayName": "Horizontal Bomb",
       "spriteKey": "modifier_bomb_h",
-      "replacesFruit": false,
       "handlerRef": "bombHandler"
     },
     {
       "id": "bomb_v",
       "displayName": "Vertical Bomb",
       "spriteKey": "modifier_bomb_v",
-      "replacesFruit": false,
       "handlerRef": "bombHandler"
+    }
+  ],
+  "specialTiles": [
+    {
+      "id": "golden_apple",
+      "displayName": "Golden Apple",
+      "spriteKey": "modifier_golden_apple",
+      "handlerRef": "goldenAppleHandler"
+    },
+    {
+      "id": "ice",
+      "displayName": "Ice",
+      "spriteKey": "modifier_ice",
+      "handlerRef": "iceHandler"
     }
   ]
 }

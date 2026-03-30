@@ -12,7 +12,7 @@ import abilitiesRaw   from '@config/abilities.json'
 import botRaw         from '@config/bot.json'
 import gameRaw        from '@config/game.json'
 
-import type { FruitDef, ModifierDef } from '@/types/fruit'
+import type { FruitDef, OverlayDef, SpecialTileDef } from '@/types/fruit'
 import type { CharacterDef } from '@/types/character'
 import type { AbilityDef } from '@/types/ability'
 import type { BotConfig, BotDifficulty } from '@/types/bot'
@@ -21,7 +21,8 @@ import type { BotConfig, BotDifficulty } from '@/types/bot'
 
 export const fruitsConfig = fruitsRaw as {
   fruits: FruitDef[]
-  modifiers: ModifierDef[]
+  overlays: OverlayDef[]
+  specialTiles: SpecialTileDef[]
 }
 
 export const charactersConfig = charactersRaw as {
@@ -54,9 +55,9 @@ export interface HandlerContext {
 
 export type HandlerFn = (state: GameState, ctx: HandlerContext) => void
 
-import { bombHandler }        from '@/handlers/modifiers/bombHandler'
-import { goldenAppleHandler } from '@/handlers/modifiers/goldenAppleHandler'
-import { iceHandler }         from '@/handlers/modifiers/iceHandler'
+import { bombHandler }        from '@/handlers/overlays/bombHandler'
+import { goldenAppleHandler } from '@/handlers/overlays/goldenAppleHandler'
+import { iceHandler }         from '@/handlers/overlays/iceHandler'
 import { passive_01 }         from '@/handlers/passives/passive_01'
 import { passive_02 }         from '@/handlers/passives/passive_02'
 import { passiveStub }        from '@/handlers/passives/passive_stub'

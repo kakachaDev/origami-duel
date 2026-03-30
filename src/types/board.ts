@@ -1,4 +1,4 @@
-import type { Fruit, ModifierId } from './fruit'
+import type { Fruit, OverlayId, SpecialTileId } from './fruit'
 
 export interface Position {
   /** 0-indexed, left to right */
@@ -10,7 +10,7 @@ export interface Position {
 export type CellContent =
   | { kind: 'fruit'; fruit: Fruit }
   | { kind: 'golden_apple' }
-  | { kind: 'ice' }
+  | { kind: 'ice'; hp: number }
   | { kind: 'empty' }
 
 export interface Cell {
@@ -29,6 +29,8 @@ export interface Move {
 
 export interface MatchGroup {
   cells: Position[]
-  /** Modifier created as a result of this match (4-in-row → bomb, 5-in-row/L/+ → golden_apple), or null */
-  modifierCreated: ModifierId | null
+  /** Overlay spawned by this match (4-in-row → bomb), or null */
+  overlayCreated: OverlayId | null
+  /** Special tile spawned by this match (5-in-row/L/+ → golden_apple), or null */
+  specialCreated: SpecialTileId | null
 }

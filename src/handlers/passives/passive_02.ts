@@ -22,7 +22,7 @@ export function passive_02(state: GameState, ctx: HandlerContext): void {
     for (let c = 0; c < row.length; c++) {
       const cell = row[c]
       if (!cell) continue
-      if (cell.content.kind === 'fruit' && cell.content.fruit.modifier === null) {
+      if (cell.content.kind === 'fruit' && cell.content.fruit.overlay === null) {
         eligible.push({ col: c, row: r })
       }
     }
@@ -36,7 +36,7 @@ export function passive_02(state: GameState, ctx: HandlerContext): void {
     const cell = board[pos.row]?.[pos.col]
     if (!cell || cell.content.kind !== 'fruit') continue
     const bombType = rng.chance(0.5) ? 'bomb_h' : 'bomb_v'
-    cell.content.fruit.modifier = { id: bombType }
+    cell.content.fruit.overlay = { id: bombType }
     spawned.push(pos)
   }
 

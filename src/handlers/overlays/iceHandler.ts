@@ -28,6 +28,6 @@ export function iceHandler(state: GameState, ctx: HandlerContext): void {
 
   cell.content = {
     kind: 'fruit',
-    fruit: { id: randomFruit.id, modifier: null },
+    fruit: { id: randomFruit.id, overlay: null },
   }
 }

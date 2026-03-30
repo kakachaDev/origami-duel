@@ -1,6 +1,6 @@
 import type { GameState } from '@/types/game'
 import type { HandlerContext } from '@/config/loader'
-import type { FruitId } from '@/types/fruit'
+import type { FruitId, OverlayId } from '@/types/fruit'
 
 /**
  * goldenAppleHandler
@@ -9,7 +9,7 @@ import type { FruitId } from '@/types/fruit'
  * Behaviour:
  * 1. The player swapped a regular fruit adjacent to the golden apple.
  * 2. Identify the fruit type of the swapped fruit.
- * 3. If that fruit has a modifier, propagate the modifier to all matching fruits first.
+ * 3. If that fruit has an overlay, propagate the overlay to all matching fruits first.
  * 4. Destroy all fruits of that type on the board.
  * 5. Golden apples cannot be destroyed by bomb or normal match — only by this activation.
  */
@@ -18,7 +18,7 @@ export function goldenAppleHandler(state: GameState, ctx: HandlerContext): void 
   if (!targetFruitId) return
 
   const board = state.board
-  const targetModifierId = ctx.targetModifierId as string | undefined
+  const targetOverlayId = ctx.targetOverlayId as OverlayId | undefined
 
   const toDestroy: Array<{ row: number; col: number }> = []
 
@@ -29,15 +29,15 @@ export function goldenAppleHandler(state: GameState, ctx: HandlerContext): void 
       const cell = row[c]
       if (!cell) continue
       if (cell.content.kind === 'fruit' && cell.content.fruit.id === targetFruitId) {
-        // Propagate modifier if the triggering fruit had one
-        if (targetModifierId && !cell.content.fruit.modifier) {
-          cell.content.fruit.modifier = { id: targetModifierId as never }
+        // Propagate overlay if the triggering fruit had one
+        if (targetOverlayId && !cell.content.fruit.overlay) {
+          cell.content.fruit.overlay = { id: targetOverlayId }
         }
         toDestroy.push({ row: r, col: c })
       }
     }
   }
 
-  // Store result in ctx for ModifierResolver to process
+  // Store result in ctx for OverlayResolver to process
   ;(ctx as Record<string, unknown>)['goldenAppleCells'] = toDestroy
 }
