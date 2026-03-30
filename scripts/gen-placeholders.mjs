@@ -101,7 +101,6 @@ function drawDiamond(ctx, cx, cy, r, color) {
 
 function drawArrow(ctx, cx, cy, size, horizontal) {
   ctx.fillStyle = '#FF6B00'
-  ctx.fillRect(cx - size * 0.4, cy - size * 0.15, size * 0.8, size * 0.3)
   const headSize = size * 0.22
   if (horizontal) {
     // left head
@@ -119,7 +118,6 @@ function drawArrow(ctx, cx, cy, size, horizontal) {
     ctx.closePath()
     ctx.fill()
   } else {
-    ctx.fillRect(cx - size * 0.15, cy - size * 0.4, size * 0.3, size * 0.8)
     ctx.beginPath()
     ctx.moveTo(cx, cy - size * 0.45)
     ctx.lineTo(cx - headSize, cy - size * 0.45 + headSize)
@@ -186,12 +184,8 @@ async function main() {
     } else if (mod.shape === 'diamond') {
       drawDiamond(ctx, S / 2, S / 2, S / 2 - 4, mod.color)
     } else if (mod.shape === 'arrow_h') {
-      ctx.fillStyle = '#1a1a2e'
-      ctx.fillRect(0, 0, S, S)
       drawArrow(ctx, S / 2, S / 2, S - 8, true)
     } else if (mod.shape === 'arrow_v') {
-      ctx.fillStyle = '#1a1a2e'
-      ctx.fillRect(0, 0, S, S)
       drawArrow(ctx, S / 2, S / 2, S - 8, false)
     }
 
