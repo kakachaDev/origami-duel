@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm show:*)",
+      "WebFetch(domain:wiki.playgama.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(/c/Users/kroug/AppData/Roaming/npm/pnpm approve-builds:*)",
+      "Bash(find /d/_Projects/web3/origami-duel/src -type d -name game* -o -type d -name systems)"
+    ]
+  }
+}
