@@ -22,7 +22,8 @@ async function bootstrap(): Promise<void> {
     type: Phaser.AUTO,
     width: CANVAS_WIDTH,
     height: CANVAS_HEIGHT,
-    backgroundColor: '#0d0d1a',
+    backgroundColor: '#ffffff',
+    transparent: true,
     parent: 'game',
     scale: {
       mode: Phaser.Scale.FIT,

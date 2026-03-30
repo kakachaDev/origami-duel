@@ -13,7 +13,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@config/*": ["./config/*"]
-    }
+    },
+    "skipLibCheck": true
   },
   "include": ["src/**/*", "config/**/*"],
   "exclude": ["scripts", "node_modules", "dist"]
