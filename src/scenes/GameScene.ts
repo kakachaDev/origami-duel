@@ -23,7 +23,7 @@ export class GameScene extends Phaser.Scene {
     const { width, height } = this.scale
     const d = this.initData
 
-    this.add.rectangle(40, 880, 1000, 1000, 0x0d0d1a).setOrigin(0)
+    this.add.image(width / 2, height, 'bg_field').setOrigin(0.5, 1)
 
     this.add.text(width / 2, height * 0.1, 'ORIGAMI DUEL', {
       font: 'bold 64px sans-serif', color: '#ffd700',

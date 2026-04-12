@@ -54,6 +54,39 @@ export class BootScene extends Phaser.Scene {
       this.load.image(key, `assets/abilities/${key}.png`)
     }
 
+    // ── Passive gem mini-icons (0 = empty slot, 1 = filled slot) ─────────
+    const passiveGems = ['Red', 'Green', 'Pink', 'Blue', 'Banana', 'Applebomb']
+    for (const name of passiveGems) {
+      this.load.image(`passive_${name.toLowerCase()}_0`, `assets/main_panel/passive_gems/${name}_mini_0.png`)
+      this.load.image(`passive_${name.toLowerCase()}_1`, `assets/main_panel/passive_gems/${name}_mini_1.png`)
+    }
+
+    // ── HUD / main panel ──────────────────────────────────────────────────
+    this.load.image('hud_hotbar_bg',      'assets/main_panel/hotbar_background.png')
+    this.load.image('hud_score_positive', 'assets/main_panel/score_positive.png')
+    this.load.image('hud_score_negative', 'assets/main_panel/score_negative.png')
+    this.load.image('hud_score_notify',   'assets/main_panel/score_notify.png')
+
+    // ── Ability buttons ───────────────────────────────────────────────────
+    this.load.image('ability_button',           'assets/abilities/ability_button.png')
+    this.load.image('ability_button_activated', 'assets/abilities/ability_button_activated.png')
+    this.load.image('ability_star',             'assets/abilities/ability_star.png')
+    this.load.image('ability_quantity',         'assets/abilities/ability_quantity.png')
+
+    // ── Popups ────────────────────────────────────────────────────────────
+    this.load.image('popup_you_turn',    'assets/popups/you_turn.png')
+    this.load.image('popup_enemy_turn',  'assets/popups/enemy_turn.png')
+    this.load.image('popup_final_turn',  'assets/popups/final_turn.png')
+
+    // ── Player name bar ───────────────────────────────────────────────────
+    this.load.image('name_bar_left',  'assets/player_name_bar/left.png')
+    this.load.image('name_bar_right', 'assets/player_name_bar/right.png')
+
+    // ── Top menu ──────────────────────────────────────────────────────────
+    this.load.image('top_menu_exit',  'assets/top_menu/exit.png')
+    this.load.image('top_menu_about', 'assets/top_menu/about.png')
+    this.load.image('top_menu_rules', 'assets/top_menu/rules.png')
+
     // ── Background ────────────────────────────────────────────────────────
     this.load.image('bg_field', 'assets/background/field.png')
   }
