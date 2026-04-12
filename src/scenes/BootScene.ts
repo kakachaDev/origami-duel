@@ -48,6 +48,12 @@ export class BootScene extends Phaser.Scene {
     // Applebomb: destroys all gems matching the color it is swapped with
     this.load.image('gem_applebomb', 'assets/gems/Applebomb_base.png')
 
+    // ── Abilities ─────────────────────────────────────────────────────────
+    for (let i = 1; i <= 8; i++) {
+      const key = `ability_icon_0${i}`
+      this.load.image(key, `assets/abilities/${key}.png`)
+    }
+
     // ── Background ────────────────────────────────────────────────────────
     this.load.image('bg_field', 'assets/background/field.png')
   }
