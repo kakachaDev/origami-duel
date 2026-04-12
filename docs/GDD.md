@@ -19,7 +19,7 @@ The screen is divided into three vertical zones:
 ├─────────────────────────────────┤
 │  HUD (12% height)               │  ← 3×3 info grid
 ├─────────────────────────────────┤
-│  GAME BOARD (500×500px approx.) │  ← 7×7 match-3 grid, centred
+│  GAME BOARD (1000×1000px approx.) │  ← 7×7 match-3 grid, centred
 │  (~50% of screen height)        │
 └─────────────────────────────────┘
 ```
@@ -27,9 +27,9 @@ The screen is divided into three vertical zones:
 ### HUD Grid (3×3)
 
 ```
-| Player Score       | Rope Bar (tug-of-war) | Opponent Score       |
-| Passive stack      | Actions: P - O        | Passive stack        |
-| [Ability 1][Abil2] | Round: X/4            | [Ability 1][Abil 2]  |
+| Player Score       | Rope Bar (tug-of-war)     | Opponent Score       |
+| Passive stack      | (Available Actions) P - O | Passive stack        |
+| [Ability 1][Abil2] | (Round) X/MAX             | [Ability 1][Abil 2]  |
 ```
 
 **Rope Bar:** Ranges from -100 to +100.
