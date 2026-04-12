@@ -4,9 +4,9 @@ import type { Position } from '@/types/board'
 import { createRNG } from '@/utils/rng'
 
 /**
- * ability_02 — Golden Rain
- * Replaces N random fruits with Golden Apples.
- * Does not affect Ice or existing Golden Apples.
+ * ability_02 — Apple Rain
+ * Replaces N random gems with Applebombs.
+ * Does not replace existing Applebombs.
  * N is determined by the ability's level config (ctx.count).
  */
 export function ability_02(state: GameState, ctx: HandlerContext): void {
@@ -21,7 +21,7 @@ export function ability_02(state: GameState, ctx: HandlerContext): void {
     for (let c = 0; c < row.length; c++) {
       const cell = row[c]
       if (!cell) continue
-      if (cell.content.kind === 'fruit') {
+      if (cell.content.kind === 'gem') {
         eligible.push({ col: c, row: r })
       }
     }
@@ -34,7 +34,7 @@ export function ability_02(state: GameState, ctx: HandlerContext): void {
   for (const pos of targets) {
     const cell = board[pos.row]?.[pos.col]
     if (!cell) continue
-    cell.content = { kind: 'golden_apple' }
+    cell.content = { kind: 'applebomb' }
     converted.push(pos)
   }
 

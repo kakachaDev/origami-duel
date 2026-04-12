@@ -4,16 +4,16 @@ export interface BotConfig {
   label: string
   /** 0 = always optimal, 1 = fully random */
   randomness: number
-  /** 0 = ignores passive fruit, 1 = prioritises it above all else */
+  /** 0 = ignores passive gem, 1 = prioritises it above all else */
   passiveSeeking: number
   /** Probability of using an available ability on any given action */
   abilityUsage: number
   /** 0 = uses ability at first opportunity, 1 = waits for best moment */
   abilityTiming: number
-  /** Score multiplier bonus for passive fruit matches */
-  fruitPreferenceWeight: number
-  /** 0 = first valid move, 1 = always highest fruit-count move */
+  /** Score multiplier bonus for passive gem matches */
+  gemPreferenceWeight: number
+  /** 0 = first valid move, 1 = always highest gem-count move */
   scoreMaximizing: number
-  /** Probability of intentionally triggering bomb/golden-apple combos */
+  /** Probability of intentionally triggering bomb / applebomb combos */
   modifierAwareness: number
 }

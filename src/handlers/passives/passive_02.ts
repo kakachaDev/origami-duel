@@ -4,17 +4,16 @@ import type { Position } from '@/types/board'
 import { createRNG } from '@/utils/rng'
 
 /**
- * passive_02 — Berry Storm
- * Triggered after collecting 7 blueberry fruits.
+ * passive_02 — Bomb Storm
+ * Triggered after collecting the required passive gems.
  *
- * Effect: Spawns a random Horizontal or Vertical Bomb modifier on 2 random
- * fruits that do not already have any modifier.
+ * Effect: Spawns a random Horizontal or Vertical Bomb overlay on 2 random
+ * gems that do not already have any overlay.
  */
 export function passive_02(state: GameState, ctx: HandlerContext): void {
   const board = state.board
   const rng = createRNG(Date.now())
 
-  // Collect eligible cells (fruit with no modifier)
   const eligible: Position[] = []
   for (let r = 0; r < board.length; r++) {
     const row = board[r]
@@ -22,7 +21,7 @@ export function passive_02(state: GameState, ctx: HandlerContext): void {
     for (let c = 0; c < row.length; c++) {
       const cell = row[c]
       if (!cell) continue
-      if (cell.content.kind === 'fruit' && cell.content.fruit.overlay === null) {
+      if (cell.content.kind === 'gem' && cell.content.gem.overlay === null) {
         eligible.push({ col: c, row: r })
       }
     }
@@ -34,9 +33,9 @@ export function passive_02(state: GameState, ctx: HandlerContext): void {
 
   for (const pos of targets) {
     const cell = board[pos.row]?.[pos.col]
-    if (!cell || cell.content.kind !== 'fruit') continue
+    if (!cell || cell.content.kind !== 'gem') continue
     const bombType = rng.chance(0.5) ? 'bomb_h' : 'bomb_v'
-    cell.content.fruit.overlay = { id: bombType }
+    cell.content.gem.overlay = { id: bombType }
     spawned.push(pos)
   }
 

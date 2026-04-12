@@ -3,11 +3,11 @@ import type { HandlerContext } from '@/config/loader'
 import { GRID_COLS, GRID_ROWS } from '@/config/constants'
 
 /**
- * passive_01 — Kiwi Keeper
- * Triggered after collecting 5 kiwi fruits.
+ * passive_01 — Center Blast
+ * Triggered after collecting the required passive gems.
  *
- * Effect: Destroys all fruits in the 3×3 area at the center of the board.
- * Does NOT destroy Golden Apples.
+ * Effect: Destroys all gems in the 3×3 area at the center of the board.
+ * Does NOT destroy Applebombs.
  */
 export function passive_01(state: GameState, ctx: HandlerContext): void {
   const board = state.board
@@ -22,9 +22,8 @@ export function passive_01(state: GameState, ctx: HandlerContext): void {
       const c = centerCol + dc
       const cell = board[r]?.[c]
       if (!cell) continue
-      // Do not destroy golden apples
-      if (cell.content.kind === 'golden_apple') continue
-      if (cell.content.kind === 'fruit') {
+      if (cell.content.kind === 'applebomb') continue
+      if (cell.content.kind === 'gem') {
         destroyed.push({ row: r, col: c })
         cell.content = { kind: 'empty' }
       }

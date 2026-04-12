@@ -1,0 +1,66 @@
+{
+  "gems": [
+    {
+      "id": "red",
+      "displayName": "Red",
+      "spriteKey": "gem_red",
+      "bombSpriteKey": "gem_red_bomb",
+      "basePoints": 10,
+      "color": "#D9453B"
+    },
+    {
+      "id": "green",
+      "displayName": "Green",
+      "spriteKey": "gem_green",
+      "bombSpriteKey": "gem_green_bomb",
+      "basePoints": 10,
+      "color": "#5D9C3B"
+    },
+    {
+      "id": "pink",
+      "displayName": "Pink",
+      "spriteKey": "gem_pink",
+      "bombSpriteKey": "gem_pink_bomb",
+      "basePoints": 10,
+      "color": "#E8658B"
+    },
+    {
+      "id": "blue",
+      "displayName": "Blue",
+      "spriteKey": "gem_blue",
+      "bombSpriteKey": "gem_blue_bomb",
+      "basePoints": 10,
+      "color": "#4B7BE8"
+    },
+    {
+      "id": "banana",
+      "displayName": "Banana",
+      "spriteKey": "gem_banana",
+      "bombSpriteKey": "gem_banana_bomb",
+      "basePoints": 10,
+      "color": "#FFE135"
+    }
+  ],
+  "overlays": [
+    {
+      "id": "bomb_h",
+      "displayName": "Horizontal Bomb",
+      "spriteKey": "overlay_bomb_h",
+      "handlerRef": "bombHandler"
+    },
+    {
+      "id": "bomb_v",
+      "displayName": "Vertical Bomb",
+      "spriteKey": "overlay_bomb_v",
+      "handlerRef": "bombHandler"
+    }
+  ],
+  "specialTiles": [
+    {
+      "id": "applebomb",
+      "displayName": "Apple Bomb",
+      "spriteKey": "gem_applebomb",
+      "handlerRef": "applebombHandler"
+    }
+  ]
+}

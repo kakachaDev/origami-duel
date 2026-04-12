@@ -26,7 +26,7 @@ export class CharactersScene extends Phaser.Scene {
       this.add.text(x, y - 70, char.displayName, {
         font: 'bold 32px sans-serif', color: '#ffd700',
       }).setOrigin(0.5)
-      this.add.text(x, y - 20, `Fruit: ${char.fruitId}  |  Stack: ${char.passiveStackRequired}`, {
+      this.add.text(x, y - 20, `Gem: ${char.gemId}  |  Stack: ${char.passiveStackRequired}`, {
         font: '24px sans-serif', color: '#aaaacc',
       }).setOrigin(0.5)
       this.add.text(x, y + 30, char.passiveDescription, {

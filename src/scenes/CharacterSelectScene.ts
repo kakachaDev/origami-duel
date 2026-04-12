@@ -33,7 +33,7 @@ export class CharacterSelectScene extends Phaser.Scene {
         font: 'bold 28px sans-serif', color: '#ffffff',
         wordWrap: { width: width * 0.2 },
       }).setOrigin(0.5)
-      this.add.text(x, y + 80, `${char.fruitId} ×${char.passiveStackRequired}`, {
+      this.add.text(x, y + 80, `${char.gemId} ×${char.passiveStackRequired}`, {
         font: '24px sans-serif', color: '#aaaacc',
       }).setOrigin(0.5)
 

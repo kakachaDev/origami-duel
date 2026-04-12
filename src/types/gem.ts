@@ -1,15 +1,17 @@
-export type FruitId = 'kiwi' | 'peach' | 'banana' | 'strawberry' | 'blueberry'
+export type GemId = 'red' | 'green' | 'pink' | 'blue' | 'banana'
 
-export interface FruitDef {
-  id: FruitId
+export interface GemDef {
+  id: GemId
   displayName: string
+  /** Base gem sprite */
   spriteKey: string
-  outlinedSpriteKey: string
+  /** Pre-combined gem + bomb visual (alternate asset) */
+  bombSpriteKey: string
   basePoints: number
   color: string
 }
 
-// Overlays sit on top of a fruit tile (bombs)
+// Overlays sit on top of a gem tile (bombs)
 export type OverlayId = 'bomb_h' | 'bomb_v'
 
 export interface OverlayDef {
@@ -23,14 +25,14 @@ export interface Overlay {
   id: OverlayId
 }
 
-export interface Fruit {
-  id: FruitId
-  /** null = plain fruit with no overlay */
+export interface Gem {
+  id: GemId
+  /** null = plain gem with no overlay */
   overlay: Overlay | null
 }
 
-// Standalone special tiles — not fruit variants
-export type SpecialTileId = 'golden_apple' | 'ice'
+// Standalone special tiles — not gem variants
+export type SpecialTileId = 'applebomb'
 
 export interface SpecialTileDef {
   id: SpecialTileId

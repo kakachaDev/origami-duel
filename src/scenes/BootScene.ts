@@ -26,42 +26,30 @@ export class BootScene extends Phaser.Scene {
     // Suppress unused var warnings
     void barBg; void label
 
-    // ── Fruits ────────────────────────────────────────────────────────────
-    this.load.image('fruit_kiwi',              'sprites/fruits/kiwi.png')
-    this.load.image('fruit_kiwi_outlined',     'sprites/fruits/kiwi_outlined.png')
-    this.load.image('fruit_peach',             'sprites/fruits/peach.png')
-    this.load.image('fruit_peach_outlined',    'sprites/fruits/peach_outlined.png')
-    this.load.image('fruit_banana',            'sprites/fruits/banana.png')
-    this.load.image('fruit_banana_outlined',   'sprites/fruits/banana_outlined.png')
-    this.load.image('fruit_strawberry',        'sprites/fruits/strawberry.png')
-    this.load.image('fruit_strawberry_outlined','sprites/fruits/strawberry_outlined.png')
-    this.load.image('fruit_blueberry',         'sprites/fruits/blueberry.png')
-    this.load.image('fruit_blueberry_outlined','sprites/fruits/blueberry_outlined.png')
+    // ── Gems (base) ───────────────────────────────────────────────────────
+    this.load.image('gem_red',    'assets/gems/Red_base.png')
+    this.load.image('gem_green',  'assets/gems/Green_base.png')
+    this.load.image('gem_pink',   'assets/gems/Pink_base.png')
+    this.load.image('gem_blue',   'assets/gems/Blue_base.png')
+    this.load.image('gem_banana', 'assets/gems/Banana_base.png')
 
-    // ── Modifiers ─────────────────────────────────────────────────────────
-    this.load.image('modifier_bomb_h',       'sprites/modifiers/bomb_h.png')
-    this.load.image('modifier_bomb_v',       'sprites/modifiers/bomb_v.png')
-    this.load.image('modifier_golden_apple', 'sprites/modifiers/golden_apple.png')
-    this.load.image('modifier_ice',          'sprites/modifiers/ice.png')
+    // ── Gems (pre-combined with bomb, for alternate rendering) ────────────
+    this.load.image('gem_red_bomb',    'assets/gems/Red_bomb.png')
+    this.load.image('gem_green_bomb',  'assets/gems/Green_bomb.png')
+    this.load.image('gem_pink_bomb',   'assets/gems/Pink_bomb.png')
+    this.load.image('gem_blue_bomb',   'assets/gems/Blue_bomb.png')
+    this.load.image('gem_banana_bomb', 'assets/gems/Banana_bomb.png')
 
-    // ── Characters ────────────────────────────────────────────────────────
-    for (let i = 1; i <= 8; i++) {
-      const key = `char_bird_0${i}`
-      this.load.image(key, `sprites/characters/bird_0${i}.png`)
-    }
+    // ── Bomb overlays (drawn on top of base gem) ──────────────────────────
+    this.load.image('overlay_bomb_h', 'assets/gems/Bomb_LeftRight.png')
+    this.load.image('overlay_bomb_v', 'assets/gems/Bomb_UpDown.png')
 
-    // ── Abilities ─────────────────────────────────────────────────────────
-    for (let i = 1; i <= 8; i++) {
-      this.load.image(`ability_icon_0${i}`, `sprites/abilities/ability_icon_0${i}.png`)
-    }
+    // ── Special gem ───────────────────────────────────────────────────────
+    // Applebomb: destroys all gems matching the color it is swapped with
+    this.load.image('gem_applebomb', 'assets/gems/Applebomb_base.png')
 
-    // ── UI ────────────────────────────────────────────────────────────────
-    this.load.image('ui_rope_bar_bg',     'sprites/ui/rope_bar_bg.png')
-    this.load.image('ui_rope_bar_marker', 'sprites/ui/rope_bar_marker.png')
-    this.load.image('ui_finger_cursor',   'sprites/ui/finger_cursor.png')
-    this.load.image('ui_hud_bg',          'sprites/ui/hud_bg.png')
-    this.load.image('ui_btn_primary',     'sprites/ui/btn_primary.png')
-    this.load.image('ui_btn_active',      'sprites/ui/btn_active.png')
+    // ── Background ────────────────────────────────────────────────────────
+    this.load.image('bg_field', 'assets/background/field.png')
   }
 
   create(): void {

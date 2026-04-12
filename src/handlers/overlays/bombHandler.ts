@@ -4,7 +4,7 @@ import type { Position } from '@/types/board'
 
 /**
  * bombHandler
- * Triggered when a fruit with a bomb_h or bomb_v overlay is destroyed.
+ * Triggered when a gem with a bomb_h or bomb_v overlay is destroyed.
  *
  * bomb_h: clears the entire row of the triggering cell.
  * bomb_v: clears the entire column of the triggering cell.
@@ -20,30 +20,26 @@ export function bombHandler(state: GameState, ctx: HandlerContext): void {
   const rows = board.length
   const cols = board[0]?.length ?? 0
 
-  // Determine bomb direction from the cell content
   const cell = board[pos.row]?.[pos.col]
-  if (!cell || cell.content.kind !== 'fruit') return
+  if (!cell || cell.content.kind !== 'gem') return
 
-  const overlayId = cell.content.fruit.overlay?.id
+  const overlayId = cell.content.gem.overlay?.id
   if (!overlayId) return
 
   if (overlayId === 'bomb_h') {
-    // Clear entire row
     for (let c = 0; c < cols; c++) {
       const target = board[pos.row]?.[c]
       if (!target) continue
-      if (target.content.kind === 'fruit' || target.content.kind === 'ice') {
-        // Mark for destruction — actual scoring/removal is handled by OverlayResolver
+      if (target.content.kind === 'gem') {
         ;(ctx as Record<string, unknown>)['bombCells'] ??= []
         ;((ctx as Record<string, unknown>)['bombCells'] as Position[]).push({ col: c, row: pos.row })
       }
     }
   } else if (overlayId === 'bomb_v') {
-    // Clear entire column
     for (let r = 0; r < rows; r++) {
       const target = board[r]?.[pos.col]
       if (!target) continue
-      if (target.content.kind === 'fruit' || target.content.kind === 'ice') {
+      if (target.content.kind === 'gem') {
         ;(ctx as Record<string, unknown>)['bombCells'] ??= []
         ;((ctx as Record<string, unknown>)['bombCells'] as Position[]).push({ col: pos.col, row: r })
       }

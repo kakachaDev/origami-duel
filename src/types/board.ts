@@ -1,4 +1,4 @@
-import type { Fruit, OverlayId, SpecialTileId } from './fruit'
+import type { Gem, OverlayId, SpecialTileId } from './gem'
 
 export interface Position {
   /** 0-indexed, left to right */
@@ -8,9 +8,8 @@ export interface Position {
 }
 
 export type CellContent =
-  | { kind: 'fruit'; fruit: Fruit }
-  | { kind: 'golden_apple' }
-  | { kind: 'ice'; hp: number }
+  | { kind: 'gem'; gem: Gem }
+  | { kind: 'applebomb' }
   | { kind: 'empty' }
 
 export interface Cell {
@@ -31,6 +30,6 @@ export interface MatchGroup {
   cells: Position[]
   /** Overlay spawned by this match (4-in-row → bomb), or null */
   overlayCreated: OverlayId | null
-  /** Special tile spawned by this match (5-in-row/L/+ → golden_apple), or null */
+  /** Special tile spawned by this match (5-in-row/L/+ → applebomb), or null */
   specialCreated: SpecialTileId | null
 }

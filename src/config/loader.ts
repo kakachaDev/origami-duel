@@ -6,21 +6,21 @@
  * Vite resolveJsonModule makes static JSON imports type-safe.
  */
 
-import fruitsRaw      from '@config/fruits.json'
-import charactersRaw  from '@config/characters.json'
-import abilitiesRaw   from '@config/abilities.json'
-import botRaw         from '@config/bot.json'
-import gameRaw        from '@config/game.json'
+import gemsRaw       from '@config/gems.json'
+import charactersRaw from '@config/characters.json'
+import abilitiesRaw  from '@config/abilities.json'
+import botRaw        from '@config/bot.json'
+import gameRaw       from '@config/game.json'
 
-import type { FruitDef, OverlayDef, SpecialTileDef } from '@/types/fruit'
+import type { GemDef, OverlayDef, SpecialTileDef } from '@/types/gem'
 import type { CharacterDef } from '@/types/character'
 import type { AbilityDef } from '@/types/ability'
 import type { BotConfig, BotDifficulty } from '@/types/bot'
 
 // ─── Typed accessors ─────────────────────────────────────────────────────────
 
-export const fruitsConfig = fruitsRaw as {
-  fruits: FruitDef[]
+export const gemsConfig = gemsRaw as {
+  gems: GemDef[]
   overlays: OverlayDef[]
   specialTiles: SpecialTileDef[]
 }
@@ -55,20 +55,18 @@ export interface HandlerContext {
 
 export type HandlerFn = (state: GameState, ctx: HandlerContext) => void
 
-import { bombHandler }        from '@/handlers/overlays/bombHandler'
-import { goldenAppleHandler } from '@/handlers/overlays/goldenAppleHandler'
-import { iceHandler }         from '@/handlers/overlays/iceHandler'
-import { passive_01 }         from '@/handlers/passives/passive_01'
-import { passive_02 }         from '@/handlers/passives/passive_02'
-import { passiveStub }        from '@/handlers/passives/passive_stub'
-import { ability_01 }         from '@/handlers/abilities/ability_01'
-import { ability_02 }         from '@/handlers/abilities/ability_02'
-import { abilityStub }        from '@/handlers/abilities/ability_stub'
+import { bombHandler }       from '@/handlers/overlays/bombHandler'
+import { applebombHandler }  from '@/handlers/overlays/applebombHandler'
+import { passive_01 }        from '@/handlers/passives/passive_01'
+import { passive_02 }        from '@/handlers/passives/passive_02'
+import { passiveStub }       from '@/handlers/passives/passive_stub'
+import { ability_01 }        from '@/handlers/abilities/ability_01'
+import { ability_02 }        from '@/handlers/abilities/ability_02'
+import { abilityStub }       from '@/handlers/abilities/ability_stub'
 
 export const handlerRegistry: Record<string, HandlerFn> = {
   bombHandler,
-  goldenAppleHandler,
-  iceHandler,
+  applebombHandler,
   passive_01,
   passive_02,
   passive_stub: passiveStub,

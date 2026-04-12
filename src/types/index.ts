@@ -1,4 +1,4 @@
-export type { FruitId, FruitDef, OverlayId, OverlayDef, Overlay, Fruit, SpecialTileId, SpecialTileDef } from './fruit'
+export type { GemId, GemDef, OverlayId, OverlayDef, Overlay, Gem, SpecialTileId, SpecialTileDef } from './gem'
 export type { Position, CellContent, Cell, Board, Move, MatchGroup } from './board'
 export type { CharacterDef, PassiveState } from './character'
 export type { AbilityLevel, AbilityLevelConfig, AbilityDef, AbilityInstance } from './ability'

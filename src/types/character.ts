@@ -1,10 +1,10 @@
-import type { FruitId } from './fruit'
+import type { GemId } from './gem'
 
 export interface CharacterDef {
   id: string
   displayName: string
   spriteKey: string
-  fruitId: FruitId
+  gemId: GemId
   passiveStackRequired: number
   passiveDescription: string
   passiveHandlerRef: string
